@@ -1,0 +1,16 @@
+Django
+django-debug-toolbar
+django-environ
+django-filter
+djangorestframework
+markdown
+pytest
+pytest-django
+cookiecutter
+django-extensions
+django-allauth
+coreapi
+pyyaml
+uritemplate
+drf-spectacular
+djoser
