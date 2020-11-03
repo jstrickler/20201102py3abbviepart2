@@ -1,9 +1,6 @@
 from uuid import uuid4
 from django.db import models
 
-from uuid import uuid4
-from django.db import models
-
 
 class City(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False, help_text="Unique ID of this city")
@@ -28,6 +25,7 @@ class Contact(models.Model):
     dob = models.DateField(help_text="Date of birth", null=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=True,
                              related_name="cities", help_text="City for this contact")
+    title = models.CharField(max_length=8, help_text="Title", null=True)
 
     class Meta:
         db_table = 'contacts'

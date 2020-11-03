@@ -74,6 +74,20 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+REST_FRAMEWORK = {
+    # ...
+}
+
+
+DATABASES = {
+    'default': {
+    'ENGINE':   'django.db.backends.oracle',
+    'NAME':     'localhost/orcl',
+    'USER':     'pythonhol',
+    'PASSWORD': 'welcome',
+  }
+}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
