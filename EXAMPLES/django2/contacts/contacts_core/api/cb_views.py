@@ -4,11 +4,13 @@ from rest_framework import generics
 from  .serializers import ContactSerializer, CitySerializer
 
 # class-based views (aka CBVs)
-class ContactsList(generics.ListCreateAPIView):
+class ContactsList(generics.ListCreateAPIView):   #  GET /api/contacts  POST /api/contacts
+
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
 class ContactsDetail(generics.RetrieveUpdateDestroyAPIView):
+    # GET /api/contacts/ID  PUT /api/contacts/ID  PATCH /api/contacts/ID  DELETE /api/contacts/ID
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 

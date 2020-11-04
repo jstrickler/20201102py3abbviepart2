@@ -1,6 +1,12 @@
 from rest_framework import serializers
 from contacts_core.models import City, Contact
 
+
+class AnimalSerializer(serializers.Serializer):
+
+    animal = serializers.CharField(max_length=32)
+    country = serializers.CharField(max_length=32)
+
 class CitySerializerPlain(serializers.Serializer):
 
     id = serializers.UUIDField()
@@ -19,13 +25,12 @@ class ContactSerializerPlain(serializers.Serializer):
     city = CitySerializerPlain()
 
 class CitySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = City
         fields = ('id', 'name', 'admindiv', 'country')
 
 class ContactSerializer(serializers.ModelSerializer):
-    city = serializers.HyperlinkedRelatedField(view_name='contacts_core:api:cbcities-detail', read_only=True)
+    city = serializers.HyperlinkedRelatedField(view_name='contacts_core:api:city-detail', read_only=True)
 
     class Meta:
         model = Contact

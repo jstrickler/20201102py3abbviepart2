@@ -33,7 +33,7 @@ urlpatterns = [
     path('admin', admin.site.urls),
     # To include urls from an app:
     #
-    path('', include('presidents_core.urls', namespace="presidents          ")),  # delegate to app's URL config
+    path('', include('presidents_core.urls', namespace="presidents")),  # delegate to app's URL config
     #
     # note: if path (1st arg) is not empty, it will be a prefix to app URL
     # and will follow the hostname, before the path in the app's urls.py

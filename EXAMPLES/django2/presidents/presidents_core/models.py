@@ -9,7 +9,7 @@ from django.db import models
 
 
 class Presidents(models.Model):
-    termnum = models.AutoField(blank=True, primary_key=True)
+    termnum = models.AutoField(primary_key=True)
     lastname = models.CharField(max_length=32, blank=True, null=True)
     firstname = models.CharField(max_length=64, blank=True, null=True)
     termstart = models.DateField(blank=True, null=True)
@@ -23,6 +23,9 @@ class Presidents(models.Model):
     class Meta:
         managed = False
         db_table = 'presidents'
+        ordering = ['termnum']
+        verbose_name = 'president'
+        verbose_name_plural = 'presidents'
 
     def __str__(self):
-        return f"{self.termnum}: {self.firstname} {self.lastname}"
+        return f"{self.termnum}: {self.firstname} {self.lastname} {self.party[:1].upper()}"

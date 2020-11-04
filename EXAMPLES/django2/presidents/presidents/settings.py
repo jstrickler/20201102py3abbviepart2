@@ -100,14 +100,16 @@ WSGI_APPLICATION = 'presidents.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
+    # MANDATORY DB NAME
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'presidents.db'),
     },
     # 'potus': {
     #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': '/put/path/to/DATA/presidents.db',
+    #     'NAME': 'C:/users/revathi/Desktop/py3abbvie2/DATA/airports.db',
     # },
+    # FREE-FORM DB NAME
     'potus': {  # instructor only
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
@@ -132,6 +134,8 @@ REST_FRAMEWORK = {
     #    'rest_framework.authentication.BasicAuthentication',
     #    'rest_framework.authentication.SessionAuthentication',
     #)
+#    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 5,
 }
 
 # LOGIN_REDIRECT_URL = "my_app:my_page"

@@ -1,10 +1,20 @@
 from django.conf import settings
 from django.urls import path, include
 from django.contrib import admin
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
 
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('', include('contacts_core.urls', namespace="contacts_core")),
+    # path('dogs', include('contacts_core.urls', namespace="dogs_core")),
+    # path('art', include('contacts_core.urls', namespace="art_core")),
+    path('', include('contacts_core.urls', namespace="contacts")),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
 ]
 
@@ -15,3 +25,4 @@ if settings.DEBUG:
         path('__debug__', include(debug_toolbar.urls)),
     ] + urlpatterns
 
+# 3f2540e4b1bf996c396e04c5463a47e42900441a
