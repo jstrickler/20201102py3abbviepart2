@@ -10,12 +10,9 @@ from .serializers import ContactSerializerPlain
 # example without template (only used in class -- always use templates in real life):
 @api_view(['GET', 'POST'])
 def hello(request):
-     if request.request_type == "GET":
-          message = {"message": "Welcome to Contacts API Core"}
-          renderer = JSONRenderer()
-          return Response(renderer.render(message), 200)
-     else:
-          pass
+     message = {"message": "Welcome to Contacts API Core"}
+     renderer = JSONRenderer()
+     return Response(renderer.render(message), 200)
 
 
 @api_view(['GET'])

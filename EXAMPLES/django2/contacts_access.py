@@ -74,13 +74,14 @@ def logout(auth_token):
     return response.content
 
 def get_contact_list(auth_token):
-    headers = {'Authorization': f"Token {auth_token}"}
+    with requests.Session() as session:
+        session.headers = {'Authorization': f"Token {auth_token}"}
 
-    response = requests.get(
-        CONTACTS_URL,
-        headers=headers
-    )
-    return response.content
+
+        response = requests.get(
+            CONTACTS_URL,
+        )
+        return response.content
 
 if __name__ == '__main__':
     main()

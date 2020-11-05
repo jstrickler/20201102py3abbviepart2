@@ -9,6 +9,9 @@ urlpatterns = [
     # path('dogs', include('contacts_core.urls', namespace="dogs_core")),
     # path('art', include('contacts_core.urls', namespace="art_core")),
     path('', include('contacts_core.urls', namespace="contacts")),
+    # path('api/', include('contacts_core.api.urls', namespace='api')
+    # path('apple', include('apple.urls', namespace="apple")),
+    # path('banana/', include('banana.urls', namespace="banana")),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

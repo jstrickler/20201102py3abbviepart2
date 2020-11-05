@@ -5,7 +5,6 @@ from  .serializers import ContactSerializer, CitySerializer
 
 # class-based views (aka CBVs)
 class ContactsList(generics.ListCreateAPIView):   #  GET /api/contacts  POST /api/contacts
-
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 

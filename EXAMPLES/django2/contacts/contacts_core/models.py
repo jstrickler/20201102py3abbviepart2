@@ -2,11 +2,18 @@ from uuid import uuid4
 from django.db import models
 
 
+class MyCustomManager(models.Manager):
+
+    def count_us(self):
+        return len(self.filter(country='US'))
+
+
 class City(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False, help_text="Unique ID of this city")
     name = models.CharField(max_length=64, help_text="City name")
     admindiv = models.CharField(max_length=128, help_text="Administrative Division (State/Province etc.)", null=True)
     country = models.CharField(max_length=2, help_text="Country code", default="US")
+    objects = MyCustomManager()
 
     class Meta:
         db_table = 'cities'
@@ -14,6 +21,11 @@ class City(models.Model):
 
     def __str__(self):
         return f"{self.name}, {self.admindiv}"
+
+    def my_custom_method(self):  # row level
+        return f"{self.name}, {self.admindiv}"
+
+
 
 
 class Contact(models.Model):

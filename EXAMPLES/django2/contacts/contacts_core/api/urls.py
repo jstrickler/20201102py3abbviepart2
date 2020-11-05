@@ -12,7 +12,7 @@ router.register('contacts', viewsets.ContactViewSet)
 router.register('cities', viewsets.CityViewSet)
 
 urlpatterns = [
-    path('fbv/hello', fb_views.hello, name="hello"),
+    path('yogibear/jellystone', fb_views.hello, name="weasel"),
     path('fbv/contacts', fb_views.contacts, name="fbcontacts"),
     path('fbv/contacts/<str:pk>', fb_views.contacts_detail, name="fbcontacts-detail"),
     path('cbv/contacts', cb_views.ContactsList.as_view(), name="contacts"),

@@ -10,6 +10,9 @@ class SuperheroManager(models.Manager):
     def get_fliers(self):
         return self.filter(powers__name__icontains="fly")
 
+    # def get_employed(self):
+    #     return self.filter(currently_employed=True)
+
 class Power(models.Model):
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=512)

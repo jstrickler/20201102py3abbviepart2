@@ -26,7 +26,8 @@ class TestContactsAPI(APITestCase):
             expected = obj.first_name
             url = self.contact_url(obj.id)
             response = self.client.get(url)
-            self.assertEqual(expected, response["first_name"])
+            print("HELLO WORLD THIS IS WEIRD")
+            self.assertEqual(expected, response['first_name'])
 
     def test_invalid_contacts_id_returns_404(self):
         expected = 404

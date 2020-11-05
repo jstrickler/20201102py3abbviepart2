@@ -1,0 +1,70 @@
+- model: contacts_core.city
+  pk: 3c49083e-4d0d-41d5-ac43-1301afe15ca7
+  fields:
+    name: Kitchener
+    admindiv: Ontario
+    country: CA
+- model: contacts_core.city
+  pk: 5ad82552-0477-499b-a106-345586cc36b8
+  fields:
+    name: Chicago
+    admindiv: IL
+    country: US
+- model: contacts_core.city
+  pk: bd4ae679-84a0-41cb-beba-0fbc94fc6af9
+  fields:
+    name: Pensacola
+    admindiv: FL
+    country: US
+- model: contacts_core.city
+  pk: e9849509-fa58-4714-bf99-020c44777bef
+  fields:
+    name: Durham
+    admindiv: NC
+    country: US
+- model: contacts_core.city
+  pk: ff935859-745d-4aba-bab1-c8d3a6839c38
+  fields:
+    name: Hollywood
+    admindiv: CA
+    country: US
+- model: contacts_core.contact
+  pk: bca6968a-f652-451a-b959-94c7758ffc5b
+  fields:
+    first_name: Brenda
+    last_name: Wiggins
+    street_address: 458 Bowling Ball Court
+    postcode: 03920
+    dob: 1971-10-13
+    city: bd4ae679-84a0-41cb-beba-0fbc94fc6af9
+    title: Ms.
+- model: contacts_core.contact
+  pk: e29d6455-8424-416d-814e-1da4af83c2c8
+  fields:
+    first_name: Joe
+    last_name: Schmoe
+    street_address: 123 Cypress Lane
+    postcode: '27302'
+    dob: 1971-10-13
+    city: 3c49083e-4d0d-41d5-ac43-1301afe15ca7
+    title: Mr.
+- model: contacts_core.contact
+  pk: ea4950de-d0f2-4b1a-bb5c-52883d0c776c
+  fields:
+    first_name: Revathi
+    last_name: Kadari
+    street_address: 123 Elm st
+    postcode: Des Plains
+    dob: 1977-09-01
+    city: 5ad82552-0477-499b-a106-345586cc36b8
+    title: Boss
+- model: contacts_core.contact
+  pk: fc617ca1-623f-4a97-9d74-270cfbeafcef
+  fields:
+    first_name: John
+    last_name: Strickler
+    street_address: 4110 TALCOTT DR
+    postcode: '27705'
+    dob: 1956-10-31
+    city: e9849509-fa58-4714-bf99-020c44777bef
+    title: Poo-Bah
